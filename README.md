@@ -14,3 +14,23 @@ Django documentation
 
 Upcoming website
 - https://django.sourceartz.com
+
+File structure.
+Do note that only the folders/files that should be changed are listed.
+
+- static folder
+  - css folder 
+    - css files
+  - images folder
+    - image files
+  - js folder
+    - javascript files
+  - files folder
+    - other files (wav later on)
+- templates folder
+  - html files (views ish)
+- VocalCopy folder
+  - backend folder
+    - backend python files
+  - urls file (create new urls)
+  - views file (create/select views) 
