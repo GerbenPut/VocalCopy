@@ -1,1 +1,3 @@
 *.code-workspace
+static/testfiles/*
+**/__pycache__/*
