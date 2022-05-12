@@ -13,6 +13,14 @@ class Settings:
         self.functions = Settings.Defaults.functions
         self.output_function = Settings.Defaults.output_function
 
+    def __init__(self, x_domain, layers, functions, output_function):
+        if None in (x_domain, layers, functions, output_function):
+            raise ValueError("None is not a valid argument for Settings.__init__")
+        self.x_domain = x_domain
+        self.layers = layers
+        self.functions = functions
+        self.output_function = output_function
+
 class Prediction:
     def __init__(self, prediction: float):
         self.prediction = prediction
