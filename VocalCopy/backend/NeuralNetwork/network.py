@@ -4,9 +4,11 @@ import typing
 from functions import functions as operations
 
 class NeuralNetwork:
-    __param_generator = lambda layer_amt, x_dom: np.zeros((math.abs(x_dom[1]-x_dom[0]), layer_amt), float)
+    __param_generator = lambda layer_amt, x_dom:\
+        np.zeros((math.abs(x_dom[1]-x_dom[0]), layer_amt), float)
 
-    def __init__(self, layers: int, input_domain: typing.Tuple[int, int], funnel_func: function, functions: typing.List[str]):
+    def __init__(self, layers: int, input_domain: typing.Tuple[int, int],\
+        funnel_func: function, functions: typing.List[str]):
         self.__assert_layer_has_func(layers, functions)
         self.__assert_functions_exist(functions)
 

@@ -11,7 +11,6 @@ def run_all(nn, inputs) -> typing.List[BinaryClassificationPrediction]:
     return list(map(lambda input: run_one(nn, input), inputs))
 
 def train(nn, samples):
-    inputs = get_input(sampl)
     run_all(nn, inputs)
 
 def test(nn, samples):

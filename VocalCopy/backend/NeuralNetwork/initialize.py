@@ -5,13 +5,13 @@ class Settings:
         x_domain = (0, 3*10**4)
         layers = 1
         functions = []
-        funnel_function = None
+        output_function = None
 
     def __init__(self):
         self.x_domain = Settings.Defaults.x_domain
         self.layers = Settings.Defaults.layers
         self.functions = Settings.Defaults.functions
-        self.funnel_function = Settings.Defaults.funnel_function
+        self.output_function = Settings.Defaults.output_function
 
 class Prediction:
     def __init__(self, prediction: float):
@@ -22,4 +22,5 @@ class BinaryClassificationPrediction(Prediction):
         return self.prediction > threshold
 
 def initialize(settings: Settings):
-    return NeuralNetwork(layers, x_domain, funnel_function, functions)
+    return NeuralNetwork(
+        settings.layers, settings.x_domain, settings.funnel_function, settings.functions)
