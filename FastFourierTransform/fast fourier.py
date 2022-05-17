@@ -28,10 +28,11 @@ def run(filename):
         print(round(i))
     k = arange(len(data)//2-1)
     T = len(k)/fs  # where fs is the sampling frequency
-    plt.plot(k/T, e,'r')
-    plt.xlim([0,20000])
-    plt.xlabel('Frequency (Hz)')
-    plt.ylabel('Magnitude')
+    plt.plot(e, k/T, 'r')
+    plt.ylim([20,20000])
+    plt.xlim([0, max(e)]) 
+    plt.ylabel('Frequency (Hz)')
+    plt.xlabel('Magnitude')
     plt.show()
 
 file = input('bestandsnaam: ')
