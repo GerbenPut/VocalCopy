@@ -37,6 +37,7 @@ def run(filename):
     plt.xlabel('Magnitude')
     plt.subplot(2, 2, 3)
     plt.specgram(b, Fs=fs)
+    plt.savefig('output.png')
     plt.show()
 
 file = input('bestandsnaam: ')
