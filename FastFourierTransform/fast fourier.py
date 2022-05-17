@@ -25,8 +25,6 @@ def run(filename):
     print("Fourier transform successful")
     d = len(c)//2  # you only need half of the fft list (real signal symmetry)
     e = abs(c[:(d-1)])
-    for i in e[::d//100]:
-        print(round(i))
     k = arange(len(data)//2-1)
     T = len(k)/fs  # where fs is the sampling frequency
     plt.subplot(2, 2, 2)
