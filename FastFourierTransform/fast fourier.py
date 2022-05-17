@@ -13,10 +13,11 @@ def run(filename):
     b=[(ele*32767//peak) for ele in a]
     print("Track normalised")
     time = arange(0, len(a)/fs, 1/fs)
+    plt.subplots(2, 2, figsize=(16,9))
+    plt.subplot(2,2,1)
     plt.ylim([-32767, 32767])
     plt.xlim([0, len(a)/fs])
     plt.yticks(arange(-2**15, 2**15+1, 2**13))
-    plt.subplot(2, 2, 1)
     plt.plot(time, b)
     plt.xlabel('Time (s)')
     plt.ylabel('Amplitude')
