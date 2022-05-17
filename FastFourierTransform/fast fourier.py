@@ -16,10 +16,10 @@ def run(filename):
     plt.ylim([-32767, 32767])
     plt.xlim([0, len(a)/fs])
     plt.yticks(arange(-2**15, 2**15+1, 2**13))
+    plt.subplot(2, 2, 1)
     plt.plot(time, b)
     plt.xlabel('Time (s)')
     plt.ylabel('Amplitude')
-    plt.show()
     c = fft(b) # fast fourier transform
     print("Fourier transform successful")
     d = len(c)//2  # you only need half of the fft list (real signal symmetry)
@@ -28,11 +28,14 @@ def run(filename):
         print(round(i))
     k = arange(len(data)//2-1)
     T = len(k)/fs  # where fs is the sampling frequency
+    plt.subplot(2, 2, 2)
     plt.plot(e, k/T, 'r')
     plt.ylim([20,20000])
     plt.xlim([0, max(e)]) 
     plt.ylabel('Frequency (Hz)')
     plt.xlabel('Magnitude')
+    plt.subplot(2, 2, 3)
+    plt.specgram(b, Fs=fs)
     plt.show()
 
 file = input('bestandsnaam: ')
