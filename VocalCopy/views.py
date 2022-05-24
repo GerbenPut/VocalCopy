@@ -1,6 +1,7 @@
 import os
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 from django.core.files.storage import FileSystemStorage
 
@@ -8,6 +9,9 @@ from django.core.files.storage import FileSystemStorage
 from VocalCopy.backend import fft
 from .backend.fft import fastFourierTransform
 
+
+
+@csrf_exempt
 def index(request):
     # TestFunction()
     if request.method == 'POST':
