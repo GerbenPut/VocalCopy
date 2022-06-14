@@ -13,8 +13,7 @@ def fastFourierTransform(filename):
     b=[(ele*32767//peak) for ele in a]
     print("Track normalised")
     time = arange(0, len(a)/fs, 1/fs)
-    plt.subplots(2, 2, figsize=(16,9))
-    plt.subplot(2,2,1)
+    plt.subplot2grid((2,2),(0,0), colspan=2)
     plt.ylim([-32767, 32767])
     plt.xlim([0, len(a)/fs])
     plt.yticks(arange(-2**15, 2**15+1, 2**13))
@@ -26,13 +25,13 @@ def fastFourierTransform(filename):
     d = len(c)//2  # you only need half of the fft list (real signal symmetry)
     e = abs(c[:(d-1)])
     k = arange(len(data)//2-1)
-    T = len(k)/fs  # where fs is the sampling frequency
-    plt.subplot(2, 2, 2)
+    T = len(k)/(fs/2)  # where fs is the sampling frequency
+    plt.subplot2grid((2,2),(1,0))
     plt.plot(e, k/T, 'r')
     plt.ylim([20,20000])
     plt.xlim([0, max(e)]) 
     plt.ylabel('Frequency (Hz)')
     plt.xlabel('Magnitude')
-    plt.subplot(2, 2, 3)
+    plt.subplot2grid((2,2),(1,1))
     plt.specgram(b, Fs=fs)
     plt.savefig('static/images/output.png')
